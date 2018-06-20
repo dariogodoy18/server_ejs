@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/head %>
+    <title><%= title %></title>
+</head>
+<body>
+    <% include partials/header %>
+    <div class="container">
+        <% if(entries.length) {%>
+            <%entries.forEach(function(entry){%>
+                <div class="card mt-2">
+                    <div class="card-header bg-info text-white h5 d-flex justify-content-between">
+                        <div>
+                            <span><%= entry.title %></span>
+                        </div>
+                        <div>
+                            <span class="h6"><%= entry.published %></span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span class="blockquote md-0"> <%= entry.content %> </span>
+                    </div>
+                </div>
+                    
+                
+            <%})%>
+        <% } else {%>
+            <h1>No existen entadas</h1>
+        <% } %>
+    </div>
+</body>
+</html>
